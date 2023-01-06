@@ -20,6 +20,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           elevation: 0,
           flexibleSpace: const TabBar(
             // labelColor: Colors.blue,
+            indicatorColor: Colors.blue,
             tabs: [
               Tab(
                 text: "For You",
