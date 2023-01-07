@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,6 @@ class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10.0),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 20,
@@ -22,6 +21,7 @@ class _SearchBarState extends State<SearchBar> {
         children: [
           TextField(
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(10),
               filled: true,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
