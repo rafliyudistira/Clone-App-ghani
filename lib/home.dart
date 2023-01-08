@@ -18,7 +18,7 @@ class _MyHomeState extends State<MyHome> {
         body: Container(
       margin: EdgeInsets.only(top: 10),
       child: DefaultTabController(
-        length: 4,
+        length: 5,
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -31,28 +31,33 @@ class _MyHomeState extends State<MyHome> {
               elevation: 0,
               pinned: true,
               backgroundColor: ThemeData.dark().canvasColor,
-              title: Align(
-                alignment: AlignmentDirectional.center,
-                child: TabBar(
-                  indicatorWeight: 3,
-                  indicatorColor: Colors.blue[200],
-                  labelColor: Colors.blue[200],
-                  unselectedLabelColor: Colors.grey,
-                  isScrollable: true,
-                  tabs: [
-                    Tab(
-                      text: "For You",
-                    ),
-                    Tab(
-                      text: "Top Charts",
-                    ),
-                    Tab(
-                      text: "Events",
-                    ),
-                    Tab(
-                      text: "Categories",
-                    ),
-                  ],
+              title: Container(
+                // width: MediaQuery.of(context).size.width,
+                child: SizedBox(
+                  child: TabBar(
+                    indicatorWeight: 3,
+                    indicatorColor: Colors.blue[200],
+                    labelColor: Colors.blue[200],
+                    unselectedLabelColor: Colors.grey,
+                    isScrollable: true,
+                    tabs: [
+                      Tab(
+                        text: "For You",
+                      ),
+                      Tab(
+                        text: "Top Charts",
+                      ),
+                      Tab(
+                        text: "Events",
+                      ),
+                      Tab(
+                        text: "Categories",
+                      ),
+                      Tab(
+                        text: "Premium",
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

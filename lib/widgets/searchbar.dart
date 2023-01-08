@@ -13,31 +13,30 @@ class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 20,
-      ),
       child: Stack(
         children: [
-          TextField(
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(10),
-              filled: true,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                  width: 0,
-                  style: BorderStyle.none,
+          SizedBox(
+            child: TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(10),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(
+                    width: 0,
+                    style: BorderStyle.none,
+                  ),
                 ),
-              ),
-              prefixIcon: Icon(Icons.search),
-              suffixIcon: Container(
-                margin: EdgeInsets.only(right: 10),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/myFace.jpg"),
+                prefixIcon: Icon(Icons.search),
+                suffixIcon: Container(
+                  margin: EdgeInsets.only(right: 10),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/myFace.jpg"),
+                    // radius: ,
+                  ),
                 ),
+                hintText: "Search for Apps & Games",
               ),
-              hintText: "Search for Apps & Games",
             ),
           ),
           Positioned(
