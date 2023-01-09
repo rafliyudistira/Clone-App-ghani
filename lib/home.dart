@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:clone_app/widgets/searchbar.dart';
+import 'package:clone_app/Screens/apps.dart';
+import 'package:clone_app/Screens/books.dart';
+import 'package:clone_app/Screens/games.dart';
+import 'package:clone_app/Screens/offers.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatefulWidget {
@@ -12,72 +15,38 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      margin: EdgeInsets.only(top: 10),
-      child: DefaultTabController(
-        length: 5,
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              elevation: 0,
-              pinned: false,
-              backgroundColor: Colors.transparent,
-              title: SearchBar(),
-            ),
-            SliverAppBar(
-              elevation: 0,
-              pinned: true,
-              backgroundColor: ThemeData.dark().canvasColor,
-              title: Container(
-                // width: MediaQuery.of(context).size.width,
-                child: SizedBox(
-                  child: TabBar(
-                    indicatorWeight: 3,
-                    indicatorColor: Colors.blue[200],
-                    labelColor: Colors.blue[200],
-                    unselectedLabelColor: Colors.grey,
-                    isScrollable: true,
-                    tabs: [
-                      Tab(
-                        text: "For You",
-                      ),
-                      Tab(
-                        text: "Top Charts",
-                      ),
-                      Tab(
-                        text: "Events",
-                      ),
-                      Tab(
-                        text: "Categories",
-                      ),
-                      Tab(
-                        text: "Premium",
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 800,
-                child: Padding(
-                  padding: EdgeInsets.all(50),
-                  child: TabBarView(children: [
-                    Text("Hello 1"),
-                    Text("Hello 2"),
-                    Text("Hello 3"),
-                    Text("Hello 4"),
-                  ]),
-                ),
-              ),
-            )
-          ],
-        ),
+      body: _pages.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.games), label: "Games"),
+          BottomNavigationBarItem(icon: Icon(Icons.apps), label: "Apps"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.local_offer_sharp), label: "Offers"),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Books"),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.blue[200],
       ),
-    ));
+    );
   }
 }
+
+List<Widget> _pages = <Widget>[
+  Games(),
+  Apps(),
+  Offers(),
+  Books(),
+];

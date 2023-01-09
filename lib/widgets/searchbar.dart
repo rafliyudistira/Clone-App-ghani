@@ -30,9 +30,12 @@ class _SearchBarState extends State<SearchBar> {
                 prefixIcon: Icon(Icons.search),
                 suffixIcon: Container(
                   margin: EdgeInsets.only(right: 10),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/myFace.jpg"),
-                    // radius: ,
+                  child: InkWell(
+                    onTap: () {},
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage("images/myFace.jpg"),
+                      radius: 10,
+                    ),
                   ),
                 ),
                 hintText: "Search for Apps & Games",
