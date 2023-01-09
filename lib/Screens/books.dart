@@ -1,6 +1,8 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:clone_app/tabs/books/forYouBooks.dart';
+import 'package:clone_app/tabs/books/genres.dart';
+import 'package:clone_app/tabs/books/topSelling.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/searchbar.dart';
@@ -50,7 +52,7 @@ class _BooksState extends State<Books> {
                         text: "Top Selling",
                       ),
                       Tab(
-                        text: "Genre",
+                        text: "Genres",
                       ),
                     ],
                   ),
@@ -64,8 +66,8 @@ class _BooksState extends State<Books> {
                   padding: EdgeInsets.all(10),
                   child: TabBarView(children: [
                     ForYouBooks(),
-                    Text("Hello 2"),
-                    Text("Hello 3"),
+                    TopSellingBook(),
+                    Genres(),
                   ]),
                 ),
               ),

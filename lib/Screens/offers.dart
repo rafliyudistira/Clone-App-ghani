@@ -4,7 +4,6 @@ import 'package:clone_app/constants/offersGames.dart';
 import 'package:clone_app/constants/offersList.dart';
 import 'package:clone_app/tabs/offers/game_offers.dart';
 import 'package:clone_app/tabs/offers/list_offer_slide.dart';
-import 'package:clone_app/tabs/offers/tabOffers.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/bookList.dart';

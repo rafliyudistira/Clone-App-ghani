@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:clone_app/tabs/games/forYouGames.dart';
+import 'package:clone_app/tabs/games/topChartsGames.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/searchbar.dart';
@@ -67,12 +69,12 @@ class _GamesState extends State<Games> {
             ),
             SliverToBoxAdapter(
               child: Container(
-                margin: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(10.0),
                 height: MediaQuery.of(context).size.height,
                 // padding: EdgeInsets.all(50),
                 child: TabBarView(children: [
-                  Text("Hello 1"),
-                  Text("Hello 2"),
+                  ForYouGames(),
+                  TopChartGames(),
                   Text("Hello 3"),
                   Text("Hello 4"),
                   Text("Hello 5"),
